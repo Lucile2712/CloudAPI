@@ -1,0 +1,18 @@
+version: '3.4'
+services:
+ cursesapi:
+   image: ${DOCKER_REGISTRY-}cursesapi
+   build:
+     context: .
+     dockerfile: CursesAPI/Dockerfile
+   depends_on:
+   - sqldata
+ studentsapi:
+   image: ${DOCKER_REGISTRY-}studentsapi
+   build:
+     context: .
+     dockerfile: StudentsAPI/Dockerfile
+   depends_on:
+   - sqldata
+ sqldata:
+   image: mcr.microsoft.com/mssql/server:2019-latest
