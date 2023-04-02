@@ -4,7 +4,7 @@ services:
    image: ${DOCKER_REGISTRY-}cursesapi
    build:
      context: .
-     dockerfile: CursesAPI/Dockerfile
+     dockerfile: CoursesAPI/Dockerfile
    depends_on:
    - sqldata
  studentsapi:
